@@ -23,3 +23,4 @@ console.log(`Sua altura: $(altura) m`);
 //O .toFixed(2) faz aparecer apenas 2 números após o ponto
 console.log(`Seu IMC calculado é: ${(Imc.toFixed)}` );
 console.log("---------------------------------------------")
+
