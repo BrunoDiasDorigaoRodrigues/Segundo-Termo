@@ -1,0 +1,220 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1046{\fonttbl{\f0\fnil MS Sans Serif;}{\f1\fnil\fcharset0 MS Sans Serif;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\b\f0\fs16 001 - Rela\f1\'e7\'e3o: \cf2\b0 Atende\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre as entidades Cliente e Funcionario
+\par Possui uma cardinaliodade de 0,N e 1N 
+\par 
+\par \cf1\b 002 - Observa\f1\'e7\'e3o: \cf2\b0 Banco de Dados da Biblioteca\cf1\b 
+\par \cf0\b0\f0 
+\par \cf1\b 003 - Atributo: \cf2\b0 CPF\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: char
+\par comprimento do Campo: 11 caracteres
+\par Campo Unico: Unique 
+\par \cf1\b 004 - Atributo: \cf2\b0 CPF\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: char
+\par comprimento do Campo: 11 caracteres
+\par Campo Unico: Unique 
+\par \cf1\b 005 - Atributo: \cf2\b0 Cargo\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: Char
+\par  
+\par \cf1\b 006 - Atributo: \cf2\b0 Categoria\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: VARCHAR
+\par comprimento do Campo: 50 caracteres 
+\par \cf1\b 007 - Entidade: \cf2\b0 Cliente\cf1\b 
+\par \cf0\b0 Tabela referente a informa\f1\'e7\'f5es do conte\'fado sobre clientes
+\par possui rela\'e7\'f5es entre as entidades Pedidos
+\par \f0 
+\par \cf1\b 008 - Rela\f1\'e7\'e3o: \cf2\b0 Comprovante\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre as entidades Livro e Pagamento
+\par Possui uma cardinaliodade de 1,N e 0,N
+\par 
+\par \cf1\b 009 - Rela\f1\'e7\'e3o: \cf2\b0 Contem\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre as entidades Pedido e Livro
+\par Possui uma cardinaliodade de 1,1 e 1,1
+\par 
+\par \cf1\b 010 - Atributo: \cf2\b0 Credito\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: varchar
+\par comprimento do Campo: 20caracteres
+\par 
+\par \cf1\b 011 - Atributo: \cf2\b0 Data_Livro\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: date
+\par  
+\par \cf1\b 012 - Atributo: \cf2\b0 Debito\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: varchar
+\par comprimento do Campo: 20caracteres
+\par 
+\par \cf1\b 013 - Atributo: \cf2\b0 Dinheiro\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: varchar
+\par comprimento do Campo: 20caracteres
+\par 
+\par \cf1\b 014 - Atributo: \cf2\b0 Edicao\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: VARCHAR
+\par comprimento do Campo: 150caracteres
+\par  
+\par \cf1\b 015 - Atributo: \cf2\b0 Email\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: VARCHAR
+\par comprimento do Campo: 100caracteres
+\par  
+\par \cf1\b 016 - Atributo: \cf2\b0 Endere\f1\'e7o\cf1\b 
+\par \cf0\b0\f0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: VARCHAR
+\par comprimento do Campo: 150 caracteres
+\par 
+\par \cf1\b 017 - Entidade: \cf2\b0 Funcionario\cf1\b 
+\par \cf0\b0 Tabela referente a informa\f1\'e7\'f5es do conte\'fado sobre funcionarios
+\par possui rela\'e7\'f5es entre as entidades Pedidos
+\par \f0 
+\par \cf1\b 018 - Atributo: \cf2\b0 Horario\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: time
+\par  
+\par \cf1\b 019 - Atributo: \cf2\b0 ID_Cliente\cf1\b 
+\par \cf0\b0 Campo atributo identificador
+\par Tipo de dado: INT
+\par Chave Prim\f1\'e1ria: PK
+\par Auto_Increment: Campo de incremento autom\'e1tico
+\par \f0 
+\par \cf1\b 020 - Atributo: \cf2\b0 ID_Funcionario\cf1\b 
+\par \cf0\b0 Campo atributo identificador
+\par Tipo de dado: INT
+\par Chave Prim\f1\'e1ria: PK
+\par Auto_Increment: Campo de incremento autom\'e1tico
+\par \f0 
+\par \cf1\b 021 - Atributo: \cf2\b0 ID_Livro\cf1\b 
+\par \cf0\b0 Campo atributo identificador
+\par Tipo de dado: INT
+\par Chave Prim\f1\'e1ria: PK
+\par Auto_Increment: Campo de incremento autom\'e1tico
+\par \f0 
+\par \cf1\b 022 - Atributo: \cf2\b0 ID_Pagamento\cf1\b 
+\par \cf0\b0 Campo atributo identificador
+\par Tipo de dado: INT
+\par Chave Prim\f1\'e1ria: PK
+\par Auto_Increment: Campo de incremento autom\'e1tico
+\par \f0 
+\par \cf1\b 023 - Atributo: \cf2\b0 ID_Pedido\cf1\b 
+\par \cf0\b0 Campo atributo identificador
+\par Tipo de dado: INT
+\par Chave Prim\f1\'e1ria: PK
+\par Auto_Increment: Campo de incremento autom\'e1tico
+\par \f0 
+\par \cf1\b 024 - Atributo: \cf2\b0 Livro\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: VARCHAR
+\par comprimento do Campo: 100 caracteres
+\par  
+\par \cf1\b 025 - Entidade: \cf2\b0 Livro\cf1\b 
+\par \cf0\b0 Tabela referente a informa\f1\'e7\'f5es do conte\'fado sobre Livro
+\par possui rela\'e7\'f5es entre as entidades Pedidos e Pagamento
+\par \f0 
+\par \cf1\b 026 - Atributo: \cf2\b0 Metodo\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: VARCHAR
+\par comprimento do Campo: 100 caracteres
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par  
+\par \cf1\b 027 - Atributo: \cf2\b0 Nome\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: VARCHAR
+\par comprimento do Campo: 100 caracteres
+\par  
+\par \cf1\b 028 - Atributo: \cf2\b0 Nome\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: VARCHAR
+\par comprimento do Campo: 100 caracteres
+\par  
+\par \cf1\b 029 - Atributo: \cf2\b0 Nome\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: VARCHAR
+\par comprimento do Campo: 60 caracteres
+\par  
+\par \cf1\b 030 - Atributo: \cf2\b0 Nome_Funcionario\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: VARCHAR
+\par comprimento do Campo: 60 caracteres
+\par  
+\par \cf1\b 031 - Atributo: \cf2\b0 Numero_Pedido\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: VARCHAR
+\par comprimento do Campo: 20caracteres
+\par Campo Unico: Unique 
+\par \cf1\b 032 - Entidade: \cf2\b0 Pagamento\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 033 - Atributo: \cf2\b0 Pedido\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: VARCHAR
+\par comprimento do Campo: 100 caracteres
+\par  
+\par \cf1\b 034 - Entidade: \cf2\b0 Pedido\cf1\b 
+\par \cf0\b0 Tabela referente a informa\f1\'e7\'f5es do conte\'fado sobre Pedidos
+\par possui rela\'e7\'f5es entre as entidades Livro, clientes e funcionarios
+\par \f0 
+\par \cf1\b 035 - Atributo: \cf2\b0 Pix\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: varchar
+\par comprimento do Campo: 20caracteres
+\par  
+\par \cf1\b 036 - Atributo: \cf2\b0 Ponto\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: Datetime
+\par  
+\par \cf1\b 037 - Atributo: \cf2\b0 Quantidade\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: VARCHAR
+\par comprimento do Campo: 100 caracteres 
+\par \cf1\b 038 - Rela\f1\'e7\'e3o: \cf2\b0 Realiza\cf1\b 
+\par \cf0\b0\f0 Relacionamento entre as entidades Funcionario e Pedidos
+\par Possui uma cardinaliOdade de 1,1 e 0,N
+\par 
+\par \cf1\b 039 - Atributo: \cf2\b0 Retirada\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: date
+\par  
+\par \cf1\b 040 - Atributo: \cf2\b0 Retorno\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: date 
+\par \cf1\b 041 - Atributo: \cf2\b0 Telefone\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: VARCHAR
+\par comprimento do Campo: 15 caracteres
+\par  
+\par \cf1\b 042 - Atributo: \cf2\b0 Telefone\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: Carchar
+\par comprimento do Campo: 12 caracteres 
+\par \cf1\b 043 - Atributo: \cf2\b0 Titulo\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: VARCHAR
+\par comprimento do Campo: 150 caracteres
+\par  
+\par \cf1\b 044 - Atributo: \cf2\b0 Validade\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: date
+\par  
+\par \cf1\b 045 - Atributo: \cf2\b0 Vendas\cf1\b 
+\par \cf0\b0 Campo Obrigatorio: Not Null
+\par Tipo de Dados: VARCHAR
+\par comprimento do Campo: 60 caracteres
+\par  
+\par 
+\par }
+ 
