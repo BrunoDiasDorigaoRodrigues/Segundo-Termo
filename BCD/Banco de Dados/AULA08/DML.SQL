@@ -2,7 +2,7 @@
 -- SMARTCOFFEE BASE DE DADOS - DML
 -- EXECUTE SEMPRE QUE QUISER RESTAURAR A AULA
 
--- DROP DATABASE IF EXISTS SMARTCOFFEE_DML_BRUNO;
+DROP DATABASE IF EXISTS SMARTCOFFEE_DML_BRUNO;
 
 CREATE DATABASE SMARTCOFFEE_DML_BRUNO;
 
@@ -85,7 +85,11 @@ INSERT INTO cliente (nome, email, telefone, cidade, ativo) VALUES
 ('Gabriela Alves', 'Gabriela@gmail.com', '199999990007', 'Piracicaba', TRUE),
 ('Henrique Costa', 'Henrique@gmail.com', 'NULL', 'Limeira', FALSE),
 ('Isabela Martins', 'Isabela@gmail.com', '199999990009', 'Campinas', TRUE),
-('João Pereira', 'Joao@gmail.com', '199999990010', 'Limeira', TRUE);
+('João Pereira', 'Joao@gmail.com', '199999990010', 'Limeira', TRUE),
+('Bruno Dias', 'BrunoD@gmail.com', '199999990011', 'Limeira', TRUE),
+('Cristhoper Costa', 'Cris@gmail.com', '199999990012', 'Limeira', TRUE);
+
+
 
 INSERT INTO categoria (nome) VALUES
 ('Cafés'), ('Bebidas Geladas'), ('Doces'), ('Salgados'), ('Combos');
@@ -105,14 +109,14 @@ INSERT INTO produto (nome, preco, ativo, id_categoria) VALUES
 INSERT INTO pedido (data_pedido, status, valor_total, id_cliente) VALUES
 ('2026-09-01 08:15:00', 'FINALIZADO', 16.00, 1),
 ('2026-09-01 09:30:00', 'FINALIZADO', 26.00, 2),
-('2026-09-02 10:20:00', 'CANCELADO', 18.00, 3),
-('2026-09-03 14:10:00', 'FINALIZADO', 35.50, 1),
-('2026-09-04 16:40:00', 'FINALIZADO', 20.00, 4),
-('2026-09-05 11:05:00', 'PREPARANDO', 31.50, 5),
-('2026-09-06 08:50:00', 'FINALIZADO', 28.00, 6),
-('2026-09-07 17:25:00', 'FINALIZADO', 44.00, 2),
-('2026-09-08 13:15:00', 'ABERTO', 13.00, 7),
-('2026-09-09 09:45:00', 'FINALIZADO', 39.00, 1);
+('2026-09-02 10:20:00', 'CANCELADO', 18.00, 3); 
+-- ('2026-09-03 14:10:00', 'FINALIZADO', 35.50, 1),
+-- ('2026-09-04 16:40:00', 'FINALIZADO', 20.00, 4),
+-- ('2026-09-05 11:05:00', 'PREPARANDO', 31.50, 5),
+-- ('2026-09-06 08:50:00', 'FINALIZADO', 28.00, 6),
+-- ('2026-09-07 17:25:00', 'FINALIZADO', 44.00, 2),
+-- ('2026-09-08 13:15:00', 'ABERTO', 13.00, 7),
+-- ('2026-09-09 09:45:00', 'FINALIZADO', 39.00, 1);
 
 set @pedido = LAST_INSERT_ID();
 
