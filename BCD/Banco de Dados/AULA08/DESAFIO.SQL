@@ -26,12 +26,14 @@ SET @cliente = LAST_INSERT_ID();
 INSERT INTO categoria (nome) VALUES
 ('Indicados da casa');
 
-SELECT * FROM categoria;
+SELECT * FROM produto;
 
 -- 3. Localize o id da categoria criada e cadastre três produtos nela.
 
 INSERT INTO produto (nome,preco,ativo,id_categoria) VALUES
 ('Pão de queijo com presunto', '4.50', TRUE, 6 )
+('Pão na chapa ', '7.50', TRUE, 6 )
+('Cookies recheado', '2.50', TRUE, 6 )
 
 
 -- 4. Cadastre um terceiro cliente sem telefone.
