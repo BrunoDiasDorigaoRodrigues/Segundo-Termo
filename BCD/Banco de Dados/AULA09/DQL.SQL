@@ -90,7 +90,7 @@ WHERE data_pedido BETWEEN '2026-09-01 00:00:00' AND '2026-09-30 23:59:59';
 
 -- EX 8: IN com várias possibilidades
 SELECT nome, cidade
-WHERE cliente
+FROM cliente
 WHERE cidade IN ('limeira','Americana','Piracicaba')
 
 SELECT nome, cidade
@@ -183,9 +183,59 @@ FROM pedido;
 SELECT nome, COALESCE(telefone, 'Não Informado') AS Contato 
 FROM cliente;
 
+-- Ex 15: Funções de agregação - sum, avg, min, max, count
+-- COUNT - contar quantidade de registros
+--sum- soma de valores 
+-- avg - media de valores
+-- min - menor valor
+-- max - maior valor
 
+SELECT COUNT(*) AS Total_Clientes
+FROM cliente;
+-- resultado de quantidade de clientes
 
+SELECT AVG(preco) AS Media_Precos
+FROM produto;
+-- media do valor dos produtos
 
+SELECT MIN(preco) AS promoção, MAX(preco) AS reajuste, AVG(preco) AS media_precos
+FROM produto;
+-- Resumo de precos
 
+SELECT SUM(valor_total) AS faturamento_mensal
+FROM pedido
+WHERE status = 'ABERTO'
+-- Total de pedidos finalizados ou Abertos
+
+-- EX 16: GROUP BY - agrupar dados
+SELECT cidade, COUNT(*) AS qtde_cidades
+FROM cliente
+GROUP BY cidade;
+-- consulta por grupos de cidades
+
+SELECT id_categoria, COUNT(*) AS qtde_cidades
+FROM produto 
+GROUP BY id_categoria;
+-- Quantidade de produtos por categoria
+
+-- EX 17: HAVING - Filtro por grupos
+SELECT cidade, COUNT(*) AS quantidade_clientes
+FROM cliente
+GROUP BY cidade
+HAVING COUNT(*) >= 2;
+
+-- dica: usar o HAVING e não esquecer o GROUP BY
+
+----------------------------------------------------------
+-- EX: 18 consulta completa
+SELECT colunas
+FROM tabela
+WHERE condicao
+GROUP BY colunas_agrupar
+HAVING condicao 
+ORDER BY colunas
+LIMIT quantidade;
+-- Dica para seguir em ordem lógica para ua consulta parcial ou completa
+----------------------------------------------------------
 
 
