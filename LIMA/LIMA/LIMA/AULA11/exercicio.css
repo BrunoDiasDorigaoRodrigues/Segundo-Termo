@@ -1,0 +1,20 @@
+.grid-ca {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; exercico 1 / 2 */ 
+    /* grid-template-columns: repeat(4, 1fr); exercicio 4 */ 
+    /* grid-template-columns: 2fr  1fr; exercicio 3 */
+    grid-template-columns: repeat(3, 1fr); /*exercicio 5 */
+}
+/*exercicio 5 */
+/* celular */
+@media (max-width: 300px) {
+    .grid-ca {
+        grid-template-columns: 1fr ;
+    }
+}
+/* tablet */
+@media (max-width: 900px) {
+    .grid-ca {
+        grid-column: repeat(2, 1fr);
+    }
+}
