@@ -106,4 +106,7 @@ SELECT titulo,ano_publicado
 FROM livro
 WHERE ano_publicado BETWEEN 2015 AND 2025;
 
-SELECT id_emprestimo, nome, titulo, 
+SELECT MIN(quantidade_disponivel) AS menor, MAX(quantidade_disponivel) AS maior, AVG(quantidade_disponivel) AS medio, SUM(quantidade_disponivel) as soma, COUNT(quantidade_disponivel) as quantidade_registros 
+FROM livro;
+
+SELECT id_emprestimo, nome, titulo, , status_emprestimo
