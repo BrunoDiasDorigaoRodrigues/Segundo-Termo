@@ -1,0 +1,247 @@
+
+
+:root {
+
+    /* PALETA DE CORES */
+    --azul-marinho: #101B2D;
+    --azul: #1769AA;
+    --azul-eletrico: #38A6FF;
+    --branco-gelo: #F4F6FA;
+    --branco: #FFFFFF;
+    --cinza-azulado: #263244;
+
+    /* CORES DOS ELEMENTOS */
+    --cor-fundo: var(--azul-marinho);
+    --cor-cabecalho: var(--azul-eletrico);
+    --cor-banner: var(--azul-marinho);
+    --cor-titulo: var(--azul-eletrico);
+    --cor-texto: var(--branco-gelo);
+    --cor-botao: var(--azul-eletrico);
+    --cor-botao-hover: var(--azul);
+    --cor-destaque: var(--azul);
+
+    /* fontes ou tipografia*/
+    --fonte-principal: Arial, sans-serif;
+    --fonte-secundaria: "Poppins", Helvetica, sans-serif;
+
+    /* Espaçamentos */
+    --espaçamento-pequeno: 4px;
+    --espaço-small: 8px;
+    --espaço-md: 16px;
+    --espaço-lg: 24px;
+    --espaço-xl: 48px;
+    --espaço-xxl: 80px
+
+    /* obs: root é responsável por disponibilizar um espaço para cadastro de variáveis do elemento raiz do documento. Variáveis CSS globais */
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--cor-fundo);
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+h1, h2, h3 {
+    margin-top: 0;
+    color: var(--cor-titulo);
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: var(--cor-cabecalho);
+}
+
+.marca {
+    color: var(--branco);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.visual {
+    color: var(--branco);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
+.menu {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--azul-marinho);
+}
+
+.menu a:focus-visible {
+    outline: 3px solid var(--azul);
+    outline-offset: 4px;
+}
+
+
+.banner {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 80px 8%;
+    background-color: var(--cor-banner);
+}
+
+.banner h1 {
+    color: var(--azul-eletrico);
+}
+
+.banner p {
+    color: var(--branco-gelo);
+}
+
+
+.banner-imagem {
+    flex: 1;
+    margin: 0;
+}
+
+.banner-imagem img {
+    width: 100%;
+    border-radius: 18px;
+}
+
+
+.marca-ref {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 24px;
+    background-color: var(--cor-botao);
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.marca-ref:hover {
+    background-color: var(--cor-botao-hover);
+}
+
+
+@media (max-width: 768px) {
+
+    .cabecalho {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .banner {
+        flex-direction: column;
+        padding: 50px 8%;
+        text-align: center;
+    }
+
+    .banner-imagem {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2.3rem;
+    }
+}
+
+.sobre {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 80px 8%;
+    background-color: var(--branco-gelo);
+}
+
+.sobre-imagem {
+    flex: 1;
+    margin: 0;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    border-radius: 18px;
+}
+
+.lista-marca {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--escopo-lg);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.img-cartao {
+    height: 100%;
+    padding: 20px;
+    background-color: var(--branco);
+    border: 1px solid var(--branco-gelo);
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(43, 23, 13, 0.08);
+    transition: transform 0.2s ease;
+}
+
+.img-cartao img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.img-cartao:hover {
+    transform: translatey(-4px);
+    box-shadow: 0 12px 30px rgba(43, 23, 13, 0.12);
+}
