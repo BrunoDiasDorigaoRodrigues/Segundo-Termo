@@ -11,78 +11,131 @@ USE smartcoffee_dml_bruno;
 -- Para toda questão de UPDATE ou DELETE, escreva primeiro um SELECT
 -- com o mesmo WHERE para validar os registros afetados.
 
--- PARTE A - INSERT
+-- PARTE A - AQUECIMENTO
 
--- 1. Cadastre dois novos clientes com dados diferentes.
-INSERT INTO cliente (nome,email,telefone,cidade,ativo) VALUES
-('Bruno B','brunob@gmail.com','19999123456','Piracicaba',TRUE);
-SET @cliente = LAST_INSERT_ID();
-
-INSERT INTO cliente (nome,email,telefone,cidade,ativo) VALUES
-('Cristhoper B','Cristhoperb@gmail.com','19999123457','Piracicaba',TRUE);
-SET @cliente = LAST_INSERT_ID();
-
--- 2. Cadastre a categoria 'Especiais da Casa'.
-INSERT INTO categoria (nome) VALUES
-('Indicados da casa');
-
-SELECT * FROM produto;
-
--- 3. Localize o id da categoria criada e cadastre três produtos nela.
-
-INSERT INTO produto (nome,preco,ativo,id_categoria) VALUES
-('Pão de queijo com presunto', '4.50', TRUE, 6 )
-('Pão na chapa ', '7.50', TRUE, 6 )
-('Cookies recheado', '2.50', TRUE, 6 )
+-- 1. Liste todos os clientes cadastrados.
+SELECT * FROM cliente;
 
 
--- 4. Cadastre um terceiro cliente sem telefone.
+-- 2. Exiba apenas nome, cidade e e-mail dos clientes.
+
+SELECT NOME,CIDADE,EMAIL 
+FROM CLIENTE;
+
+-- 3. Liste os nomes das cidades sem repetir valores.
+SELECT DISTINCT CIDADE AS CIDADE_SEM_REPETICAO
+FROM CLIENTE;
+
+-- 4. Liste todos os produtos em ordem crescente de preço.
+SELECT NOME, PRECO
+FROM PRODUTO 
+ORDER BY PRECO ASC;
+
+-- 5. Mostre apenas os 5 produtos mais caros.
+SELECT NOME,PRECO
+FROM produto
+ORDER BY PRECO DESC
+LIMIT 5;
+-- PARTE B - FILTROS
+
+-- 6. Liste os produtos com preço entre R$ 8,00 e R$ 15,00.
 
 
--- 5. Crie um novo pedido para um dos clientes cadastrados.
+-- 7. Liste os clientes das cidades Limeira ou Americana.
 
 
--- 6. Use LAST_INSERT_ID() para guardar o id do pedido em @pedido_atividade
---    e insira pelo menos dois itens nesse pedido.
+-- 8. Localize os produtos cujo nome contém a palavra “Café”.
+SELECT NOME 
+FROM produto
+WHERE NOME LIKE 'CAFE%';
+
+-- 9. Liste os clientes que não informaram telefone.
+SELECT NOME,TELEFONE
+FROM cliente
+WHERE TELEFONE IS NULL;
+
+-- 10. Mostre os pedidos FINALIZADOS com valor acima de R$ 20,00,
+--     do maior para o menor valor.
+SELECT NOME,PRECO
+FROM produto
+ORDER BY PRECO DESC;
 
 
--- PARTE B - UPDATE
+-- PARTE C - CÁLCULOS E AGRUPAMENTOS
 
--- 7. Corrija o telefone de um dos clientes criados.
--- SELECT de validação:
--- UPDATE:
--- SELECT final:
+-- 11. Informe quantos produtos estão cadastrados.
+
+-- 12. Mostre menor preço, maior preço e preço médio dos produtos.
+SELECT MIN(PRECO) AS PROMOCAO, MAX (PRECO) AS REAJUSTE,AVG (PRECO) AS MEDAI_PRECOS
+FROM PRODUTO;
+
+-- 13. Informe quantos clientes existem em cada cidade.
+SELECT CIDADE,COUNT(*) AS QTDE_CIDADE
+FROM cliente
+GROUP BY CIDADE;
+
+-- 14. Mostre somente as cidades que possuem dois ou mais clientes.
+SELECT CIDADE, COUNT(*) AS QUANTIDADE_CLIENTES
+FROM CLIENTE
+GROUP BY CIDADE
+HAVING COUNT (*) >= 2;
+
+-- 15. Calcule o faturamento total considerando apenas pedidos FINALIZADOS.
+SELECT * from pedido;
+
+-- PARTE D - RELACIONAMENTOS
+
+-- 16. Liste cada pedido exibindo id, data, nome do cliente, status e valor total.
+SELECT C.NOME, P.ID_PEDIDO, P.DATA_PEDIDO
+FROM cliente AS 
+LEFT JOIN PEDIDO AS P 
+ON P.ID_CLIENTE = C.ID_CLIENETE
+ORDER BY C.NOME;
+
+-- 17. Liste cada produto acompanhado do nome de sua categoria.
+SELECT CA.NOME AS CATEGORIA, COUNT(PR.ID_PRODUTO) AS QTDE_PRODUTOS
+FROM CATEGORIA AS CA
+LEFT JOIN PRODUTO AS PR
+ON PR.ID_CATEGORIA = CA.ID_CATEGORIA
+GROUP BY CA.ID_CATEGORIA, CA.NOME
+ORDER BY QTDE_PRODUTOS DESC;
 
 
--- 8. Altere cidade e telefone de outro cliente em um único UPDATE.
+-- 18. Gere um relatório dos itens vendidos: pedido, produto, quantidade,
+--     preço unitário e subtotal.
 
 
--- 9. Aumente em 8% o preço dos produtos da categoria 'Especiais da Casa'.
+
+-- 19. Mostre todos os clientes, inclusive aqueles que nunca fizeram pedidos.
 
 
--- 10. Altere o status do pedido criado para 'PREPARANDO'.
+-- 20. Liste apenas os clientes que nunca fizeram pedidos.
+SELECT C.ID_CLIENTE, C.NOME
+FROM CLIENTE AS C
+LEFT JOIN PEDIDO AS P
+ON P.ID_CLIENTE = C.ID_CLIENTE
+WHERE P.ID_PEDIDO IS NULL;
 
 
--- 11. Atualize valor_total do pedido de acordo com os itens cadastrados.
---     Você pode calcular previamente com SELECT SUM(quantidade * preco_unitario).
+-- PARTE E - DESAFIO GERENCIAL
+
+-- 21. Informe quantos pedidos FINALIZADOS cada cliente realizou e quanto
+--     cada cliente gastou. Ordene do maior gasto para o menor.
 
 
--- 12. Escolha um dos produtos criados e faça uma exclusão lógica (ativo = FALSE).
+-- 22. Mostre a quantidade de produtos e o preço médio de cada categoria.
 
 
--- PARTE C - DELETE
-
--- 13. Crie um cliente de teste sem pedidos.
---     Depois localize e exclua apenas esse cliente.
+-- 23. Descubra quais produtos possuem preço superior ao preço médio geral.
 
 
--- 14. Tente excluir um cliente da base original que possua pedidos.
---     Deixe o DELETE comentado após o teste e descreva o erro abaixo.
--- Resultado observado:
+-- 24. Classifique os produtos como Econômico, Intermediário ou Premium.
+--     Defina e informe suas faixas de preço.
 
 
--- 15. Explique em comentário por que a FK bloqueou a exclusão.
--- Resposta:
-
-
--- 16. Crie uma categoria temporária chamada 'Excluir Depois' e remova-a.
+-- 25. CONSULTA AUTORAL
+-- Pergunta de negócio:
+--
+-- Por que essa informação é útil?
+--
+-- Consulta:
