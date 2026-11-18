@@ -1,0 +1,139 @@
+.inicio {
+    /* background-color: cadetblue; */
+    background-image: linear-gradient(-135deg, #f195ac, #b28bc0);
+    display: flex;
+    height: 50px;
+    align-items: center;
+
+
+}
+
+
+body {
+    box-sizing: border-box;
+    background-image: linear-gradient( 30deg    #0e7391, #ffffff );
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0 20px;
+}
+
+
+.inicio span {
+    color: #00a8ff;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+
+
+.inicio a {
+    text-decoration: none;
+    list-style: none;
+}
+
+
+.navegacao {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    list-style: none;
+    gap: 48px;
+    margin: 0;
+    padding: 30px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.conteudo-inicial {
+    background-image: linear-gradient(-135deg, #f195ac, #b28bc0);
+    display: flex;
+}
+
+
+.conteudo-art {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+}
+
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+.cartao-img {
+    transition: all 0.5s ease;
+}
+
+
+.cartao-img:hover {
+    box-shadow: 0 10px 24px -8px rgba( 241, 149, 172);
+    background:rgba( 241, 149, 172) ;
+    backdrop-filter: blur(6px);
+    transform: translateX(120px) rotate(10deg);
+}
+
+
+.galeria-conteudo {
+    background-image: linear-gradient(-135deg, #f195ac, #b28bc0);
+    padding: 0;
+    margin: 0;
+}
+
+
+.galeria-img {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    grid-column: auto;
+}
+
+
+.galeria-img  img {
+    display: block;
+    max-width: 100%;
+    height: 50%;
+}
+
+
+.galeria-img , ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+
+.gal-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+
+.gal-img figcaption {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 14px;
+    color: white;
+    background-image: linear-gradient(-135deg, #f195ac, #b28bc0);
+    transform: translateY(100%);
+    transition: tranform 0.3s ease;
+}
+
+
+.gal-img:hover figcaption {
+    transform: translateY(0);
+}
+
+.img-ultimo {
+    width: 200px;
+    height: 120px;
+    object-fit: contain;
+    scroll-snap-type: X mandatory;
+    scroll-snap-align: center;
+}
